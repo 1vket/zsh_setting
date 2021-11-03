@@ -7,6 +7,13 @@ set autoindent
 set clipboard=unnamed
 set hls
 
+" tab setting
+" set expandtab
+set noexpandtab
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+
 " dein.vim settings {{{
 " install dir {{{
 let s:dein_dir = expand('~/.cache/dein')
