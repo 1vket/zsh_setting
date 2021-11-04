@@ -8,3 +8,19 @@ on_source = ['unite.vim']
 [[plugins]]
 repo = 'davidhalter/jedi-vim'
 on_ft = ['python']
+
+[[plugins]]
+repo = 'yuezk/vim-js'
+on_ft = ['javascript', 'javascript.jsx']
+
+[[plugins]]
+repo = 'maxmellon/vim-jsx-pretty'
+on_ft = ['javascript', 'javascript.jsx']
+
+[[plugins]]
+repo = 'elzr/vim-json'
+on_ft = ['json']
+
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
+on_ft = ['typescript']
