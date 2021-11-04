@@ -6,6 +6,8 @@ set wildmenu
 set autoindent
 set clipboard=unnamed
 set hls
+set colorcolumn=80
+" syntax on
 
 " tab setting
 " set expandtab
@@ -16,7 +18,7 @@ set shiftwidth=2
 
 " dein.vim settings {{{
 " install dir {{{
-let s:dein_dir = expand('~/.cache/dein')
+let s:dein_dir = expand('~/.vim/dein')
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 " }}}
 
@@ -65,3 +67,5 @@ if len(s:removed_plugins) > 0
   call dein#recache_runtimepath()
 endif
 " }}}
+
+syntax enable
