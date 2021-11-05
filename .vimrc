@@ -7,6 +7,7 @@ set autoindent
 set clipboard=unnamed
 set hls
 set colorcolumn=80
+set backspace=indent,eol,start
 " syntax on
 
 " tab setting
