@@ -8,7 +8,6 @@ set clipboard=unnamed
 set hls
 set colorcolumn=80
 set backspace=indent,eol,start
-set list listchars=tab:\▸\-
 set cursorline
 
 " ペーストの空白を揃える
