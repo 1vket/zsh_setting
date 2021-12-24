@@ -25,9 +25,11 @@ alias gcm='git commit -m'
 alias go='git checkout'
 alias gb='git branch'
 # venv 
-alias va='(){source $1/bin/activate}'
+alias va='source venv/bin/activate'
 alias vd='deactivate'
-alias vc='(){python -m venv $1}'
+alias vc='python -m venv'
+# julia
+alias j='julia'
 
 #------------------- prompt setting -------------------
 
