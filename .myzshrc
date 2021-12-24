@@ -12,6 +12,7 @@ setopt correct
 #------------------------ alias -----------------------
 # tmux
 alias t='tmux'
+alias tn='tmux new -s'
 alias tt='tmux a -t'
 alias tl='tmux ls'
 # vim
