@@ -10,9 +10,11 @@ setopt auto_cd
 setopt correct
 
 #------------------------ alias -----------------------
+alias c='clear'
 # tmux
 alias t='tmux'
 alias tn='tmux new -s'
+alias tk='tmux kill-session -t'
 alias tt='tmux a -t'
 alias tl='tmux ls'
 # vim
@@ -27,9 +29,10 @@ alias gb='git branch'
 # venv 
 alias va='source venv/bin/activate'
 alias vd='deactivate'
-alias vc='python -m venv'
+alias vc='python -m venv venv'
 # julia
 alias j='julia'
+
 
 #------------------- prompt setting -------------------
 
