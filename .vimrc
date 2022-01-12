@@ -10,6 +10,9 @@ set colorcolumn=80
 set backspace=indent,eol,start
 set cursorline
 
+" color scheme
+colorscheme darkblue
+
 " ペーストの空白を揃える
 if &term =~ "xterm"
 let &t_SI .= "\e[?2004h"
@@ -26,7 +29,8 @@ endif
 
 " tab setting
 " set expandtab
-set noexpandtab
+set expandtab
+retab 2
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
