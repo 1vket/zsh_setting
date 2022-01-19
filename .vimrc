@@ -10,9 +10,6 @@ set colorcolumn=80
 set backspace=indent,eol,start
 set cursorline
 
-" color scheme
-colorscheme darkblue
-
 " ペーストの空白を揃える
 if &term =~ "xterm"
 let &t_SI .= "\e[?2004h"
@@ -84,5 +81,9 @@ if len(s:removed_plugins) > 0
   call dein#recache_runtimepath()
 endif
 " }}}
+
+" color scheme
+colorscheme atom-dark-256
+set t_Co=256
 
 syntax enable

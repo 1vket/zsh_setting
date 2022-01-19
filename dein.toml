@@ -81,3 +81,6 @@ hook_add = '''
   set showcmd
   set ruler
 '''
+
+[[plugins]]
+repo = 'gosukiwi/vim-atom-dark'
