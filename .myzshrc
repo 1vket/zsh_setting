@@ -53,7 +53,8 @@ function bar {
 }
 
 function git-branch {
-	local branch_name st branch_status
+	local branch_name st
+  local branch_add="" branch_cmt="" branch_pul=""
 
 	branch_name=`git symbolic-ref --short HEAD 2> /dev/null`
 	
@@ -61,23 +62,21 @@ function git-branch {
 		return
 	fi
 
-	st=`git status 2> /dev/null`
+	st=`git status -s 2> /dev/null`
 
-	if [[ -n `echo "$st" | grep "^nothing to"` ]]; then
-		branch_status=""
-	elif [[ -n `echo "$st" | grep "^Untracked files"` ]]; then
-		branch_status=""
-	elif [[ -n `echo "$st" | grep "^Change not staged for commit"` ]]; then
-		branch_status="±"
-	elif [[ -n `echo "$st" | grep "^Change to be committed"` ]]; then
-		branch_status=$'\uf63e'
-	elif [[ -n `echo "$st" | grep "^rebase in progress"` ]]; then
-		branch_status=$'\ue009'
-	else
-		branch_status=""
-	fi
+  if [[ -n `echo "$st" | grep "^ M"` ]]; then
+		branch_add="±"
+  fi
+  
+  if [[ -n `echo "$st" | grep "^M"` ]]; then
+    branch_cmt="\uf176"
+  fi
 
-	echo "`bar`%F{14}$git_icon $branch_name$branch_status%f"
+  if [[ -n `git remote show origin 2> /dev/null | grep "local out of date"` ]]; then
+    branch_pul="\uf175"
+  fi
+
+	echo "`bar`%F{14}$git_icon $branch_name $branch_add$branch_cmt$branch_pul%f"
 }
 
 # python prompt
