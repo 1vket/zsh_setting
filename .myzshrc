@@ -64,7 +64,7 @@ function git-branch {
 
 	st=`git status -s 2> /dev/null`
 
-  if [[ -n `echo "$st" | grep "^ M"` ]]; then
+  if [[ -n `echo "$st" | grep -e "^ M" -e "^A"` ]]; then
 		branch_add="±"
   fi
   
@@ -74,11 +74,11 @@ function git-branch {
 
   rs=`git remote show origin 2> /dev/null`
 
-  if [[ -n `echo "$rs" | grep "fast-forwardable"` ]]; then
+  if [[ -n `echo "$rs" | tail -1 | grep "fast-forwardable"` ]]; then
     branch_push=""
   fi
 
-  if [[ -n `echo "$rs" | grep "local out of date"` ]]; then
+  if [[ -n `echo "$rs" | tail -1 | grep "local out of date"` ]]; then
     branch_pull=""
   fi
 
