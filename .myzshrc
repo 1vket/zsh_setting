@@ -24,7 +24,7 @@ alias g='git'
 alias ga='git add'
 alias gc='git clone'
 alias gcm='git commit -m'
-alias go='git checkout'
+alias gco='git checkout'
 alias gb='git branch'
 # venv 
 alias va='source venv/bin/activate'
@@ -32,6 +32,8 @@ alias vd='deactivate'
 alias vc='python -m venv venv'
 # julia
 alias j='julia'
+# singularity
+alias sng='singularity'
 
 
 #------------------- prompt setting -------------------
