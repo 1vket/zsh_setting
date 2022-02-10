@@ -43,7 +43,7 @@ bar_color="\e[35;1m"
 end_color="\e[m"
 
 dir_icon=$'\uf07b'
-git_icon=$'\ue0a0'
+git_icon=$'\uf7a3'
 python_icon=$'\ue235'
 double_right=$'\uf63d'
 double_left=$'\uf63c'
@@ -53,8 +53,8 @@ function bar {
 }
 
 function git-branch {
-	local branch_name st
-  local branch_add="" branch_cmt="" branch_pul=""
+	local branch_name st rs
+  local branch_add="" branch_cmt="" branch_push="" branch_pull=""
 
 	branch_name=`git symbolic-ref --short HEAD 2> /dev/null`
 	
@@ -69,14 +69,20 @@ function git-branch {
   fi
   
   if [[ -n `echo "$st" | grep "^M"` ]]; then
-    branch_cmt="\uf176"
+    branch_cmt="ﰙ"
   fi
 
-  if [[ -n `git remote show origin 2> /dev/null | grep "local out of date"` ]]; then
-    branch_pul="\uf175"
+  rs=`git remote show origin 2> /dev/null`
+
+  if [[ -n `echo "$rs" | grep "fast-forwardable"` ]]; then
+    branch_push=""
   fi
 
-	echo "`bar`%F{14}$git_icon $branch_name $branch_add$branch_cmt$branch_pul%f"
+  if [[ -n `echo "$rs" | grep "local out of date"` ]]; then
+    branch_pull=""
+  fi
+
+	echo "`bar`%F{14}$git_icon $branch_name $branch_add$branch_cmt$branch_push$branch_pull%f"
 }
 
 # python prompt
