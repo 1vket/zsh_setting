@@ -54,7 +54,7 @@ function bar {
 
 function git-branch {
 	local branch_name st rs
-  local branch_add="" branch_cmt="" branch_push="" branch_pull=""
+  local space="" branch_add="" branch_cmt="" branch_push="" branch_pull=""
 
 	branch_name=`git symbolic-ref --short HEAD 2> /dev/null`
 	
@@ -82,7 +82,11 @@ function git-branch {
     branch_pull=""
   fi
 
-	echo "`bar`%F{14}$git_icon $branch_name $branch_add$branch_cmt$branch_push$branch_pull%f"
+  if [[ -n `echo "$branch_add$branch_cmt$branch_push$branch_pull"` ]]; then
+    space=" "
+  fi
+
+	echo "`bar`%F{14}$git_icon $branch_name$space$branch_add$branch_cmt$branch_push$branch_pull%f"
 }
 
 # python prompt
