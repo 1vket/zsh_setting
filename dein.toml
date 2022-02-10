@@ -86,6 +86,9 @@ hook_add = '''
 repo = 'gosukiwi/vim-atom-dark'
 
 [[plugins]]
+repo = '4513ECHO/vim-colors-hatsunemiku'
+
+[[plugins]]
 repo = 'airblade/vim-gitgutter'
 
 [[plugins]]

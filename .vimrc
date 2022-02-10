@@ -10,6 +10,10 @@ set colorcolumn=80
 set backspace=indent,eol,start
 set cursorline
 
+" 折りたたみの設定
+set foldmethod=indent
+set foldlevel=99
+
 " ペーストの空白を揃える
 if &term =~ "xterm"
 let &t_SI .= "\e[?2004h"
@@ -82,8 +86,16 @@ if len(s:removed_plugins) > 0
 endif
 " }}}
 
-" color scheme
-colorscheme atom-dark-256
+autocmd ColorScheme * highlight Normal ctermbg=none
+autocmd ColorScheme * highlight LineNr ctermbg=none
+
 set t_Co=256
+" color scheme
+" colorscheme atom-dark-256
+" colorscheme atom-dark
+colorscheme hatsunemiku
+set t_Co=256
+
+let g:lightline = { 'colorscheme': 'hatsunemiku' }
 
 syntax enable
