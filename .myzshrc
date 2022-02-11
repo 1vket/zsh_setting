@@ -15,6 +15,7 @@ alias tl='tmux ls'
 alias v='vim'
 # git
 alias g='git'
+alias gst='git status'
 alias ga='git add'
 alias gc='git clone'
 alias gcm='git commit -m'
