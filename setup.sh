@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # use myzshrc
 touch ~/.zshrc
 echo "if [ -f ~/zsh_setting/.myzshrc ]; then" >> ~/.zshrc
