@@ -86,9 +86,6 @@ if len(s:removed_plugins) > 0
 endif
 " }}}
 
-autocmd ColorScheme * highlight Normal ctermbg=none
-autocmd ColorScheme * highlight LineNr ctermbg=none
-
 set t_Co=256
 " color scheme
 " colorscheme atom-dark-256
@@ -97,5 +94,10 @@ colorscheme hatsunemiku
 set t_Co=256
 
 let g:lightline = { 'colorscheme': 'hatsunemiku' }
+
+autocmd ColorScheme * highlight Normal ctermbg=none
+autocmd ColorScheme * highlight LineNr ctermbg=none
+autocmd ColorScheme * highlight CursorLine ctermbg=none cterm=underline
+autocmd ColorScheme * highlight CursorLineNr ctermbg=none cterm=underline
 
 syntax enable
