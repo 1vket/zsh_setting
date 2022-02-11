@@ -38,7 +38,7 @@ alias sng='singularity'
 theme=simple_cyberpunk
 
 if [ -f ~/zsh_setting/prompt/$theme ]; then
- 	. ~/zsh_setting/prompt/$theme
+  . ~/zsh_setting/prompt/$theme
 else
   echo "not find theme file !"
 fi
