@@ -21,6 +21,8 @@ alias gc='git clone'
 alias gcm='git commit -m'
 alias gco='git checkout'
 alias gb='git branch'
+alias gpl='git pull origin'
+alias gps='git push origin'
 # venv 
 alias va='source venv/bin/activate'
 alias vd='deactivate'
