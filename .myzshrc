@@ -1,9 +1,3 @@
-# please add .zshrc
-#if [ -f ~/.myzshrc ]; then
-# 	. ~/.myzshrc
-#fi
-
-
 #----------------------- zsh setting -----------------
 setopt sharehistory
 setopt auto_cd
@@ -36,77 +30,12 @@ alias j='julia'
 alias sng='singularity'
 
 
-#------------------- prompt setting -------------------
+#--------------------- prompt theme -----------------
 
-obj_color="\e[36;1m"
-bar_color="\e[35;1m"
-end_color="\e[m"
+theme=simple_cyberpunk
 
-dir_icon=$'\uf07b'
-git_icon=$'\uf7a3'
-python_icon=$'\ue235'
-double_right=$'\uf63d'
-double_left=$'\uf63c'
-
-function bar {
-	echo "%F{13} ]─[ %f"
-}
-
-function git-branch {
-	local branch_name st rs
-  local space="" branch_add="" branch_cmt="" branch_push="" branch_pull=""
-
-	branch_name=`git symbolic-ref --short HEAD 2> /dev/null`
-	
-	if [ -z $branch_name ]; then
-		return
-	fi
-
-	st=`git status -s 2> /dev/null`
-
-  if [[ -n `echo "$st" | grep -e "^ M" -e "^A"` ]]; then
-		branch_add="±"
-  fi
-  
-  if [[ -n `echo "$st" | grep "^M"` ]]; then
-    branch_cmt="ﰙ"
-  fi
-
-  rs=`git remote show origin 2> /dev/null`
-
-  if [[ -n `echo "$rs" | tail -1 | grep "fast-forwardable"` ]]; then
-    branch_push=""
-  fi
-
-  if [[ -n `echo "$rs" | tail -1 | grep "local out of date"` ]]; then
-    branch_pull=""
-  fi
-
-  if [[ -n `echo "$branch_add$branch_cmt$branch_push$branch_pull"` ]]; then
-    space=" "
-  fi
-
-	echo "`bar`%F{14}$git_icon $branch_name$space$branch_add$branch_cmt$branch_push$branch_pull%f"
-}
-
-# python prompt
-export VIRTUAL_ENV_DISABLE_PROMPT=1
-function python-env {
-	local st ver
-	if [ -n "$VIRTUAL_ENV" ]; then
-		st=`basename $VIRTUAL_ENV`
-		ver=`python -V`
-		echo "`bar`%F{14}$python_icon $st:$ver%f"
-		return
-	elif [ -n "$CONDA_DEFAULT_ENV" ]; then
-		echo "`bar`%F{14}$python_icon $CONDA_DEFAULT_ENV%f"
-		return
-	else
-		return
-	fi
-}
-
-
-setopt prompt_subst
-PROMPT='%F{13}┌─[%f %F{14}$dir_icon %d%f`python-env``git-branch` %F{13}]%f
-%F{13}└─$double_right%f'
+if [ -f ~/zsh_setting/prompt/$theme ]; then
+ 	. ~/zsh_setting/prompt/$theme
+else
+  echo "not find theme file !"
+fi
