@@ -48,11 +48,10 @@ function git-branch {
 # python prompt
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 function python-env {
-	local st ver
+	local st
 	if [ -n "$VIRTUAL_ENV" ]; then
 		st=`basename $VIRTUAL_ENV`
-		ver=`python -V`
-		echo "`bar`%F{14}$st:$ver%f"
+		echo "`bar`%F{14}$st%f"
 		return
 	elif [ -n "$CONDA_DEFAULT_ENV" ]; then
 		echo "`bar`%F{14}$CONDA_DEFAULT_ENV%f"
