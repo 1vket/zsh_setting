@@ -97,7 +97,7 @@ let g:lightline = { 'colorscheme': 'hatsunemiku' }
 
 autocmd ColorScheme * highlight Normal ctermbg=none
 autocmd ColorScheme * highlight LineNr ctermbg=none
-autocmd ColorScheme * highlight CursorLine ctermbg=none cterm=underline
+autocmd ColorScheme * highlight CursorLine ctermbg=none cterm=none
 autocmd ColorScheme * highlight CursorLineNr ctermbg=none cterm=underline
 
 syntax enable

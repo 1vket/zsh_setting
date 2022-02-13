@@ -90,7 +90,7 @@ repo = '4513ECHO/vim-colors-hatsunemiku'
 hook_add = '''
   autocmd COlorScheme * highlight Normal ctermbg=none
   autocmd COlorScheme * highlight LineNr ctermbg=none
-  autocmd COlorScheme * highlight CursorLine ctermbg=none cterm=underline
+  autocmd COlorScheme * highlight CursorLine ctermbg=none cterm=none
   autocmd COlorScheme * highlight CursorLineNr ctermbg=none cterm=underline
 '''
 
