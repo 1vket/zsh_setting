@@ -30,6 +30,8 @@ alias vc='python -m venv venv'
 # julia
 alias j='julia'
 # singularity
+alias snec='singularity exec --nv Singularity.sif'
+alias snb='singularity build --fakeroot Singularity.def Singularity.sif'
 alias sng='singularity'
 
 
