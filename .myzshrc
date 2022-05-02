@@ -31,6 +31,7 @@ alias vc='python -m venv venv'
 alias j='julia'
 # singularity
 alias sng='singularity'
+alias sec='singularity exec --nv Singularity.sif'
 
 
 #--------------------- prompt theme -----------------
